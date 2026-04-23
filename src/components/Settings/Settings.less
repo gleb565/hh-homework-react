@@ -1,0 +1,74 @@
+@primary-color: #90ee90;
+@border-radius: 12px;
+
+.container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.settings-button {
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    padding: 12px 20px;
+    border-radius: @border-radius;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: white;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.settings-field {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 380px;
+    background: rgba(26, 26, 46, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: @border-radius;
+    padding: 24px;
+    margin-top: 12px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease-out;
+}
+
+.field-group {
+    margin-bottom: 20px;
+
+    label {
+        display: block;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 14px;
+        margin-bottom: 6px;
+        font-weight: 500;
+    }
+
+    .field {
+        width: 100%;
+        padding: 12px 16px;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.05);
+        color: white;
+        font-size: 16px;
+
+        &::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        &:focus {
+            outline: none;
+            border-color: @primary-color;
+            box-shadow: 0 0 0 3px rgba(24, 144, 255, 0.1);
+        }
+    }
+}
